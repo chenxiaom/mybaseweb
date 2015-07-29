@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}欢迎光临首页1{% endblock %}
+{% block content %}
+    <br> <br> <br> <br>
+
+<form action="/search_person_result/" method="get">
+  name: <input type="text" class='rep_ipt' name="name" />
+    <input type="submit" class='add_but' value="search" />
+</form>
+
+     <br> <br> <br> <br>
+{% endblock %}

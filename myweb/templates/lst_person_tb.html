@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}加法运算页面1{% endblock %}
+{% block content %}
+
+<script type="text/javascript">
+function message()
+{
+alert("no record in database"); window.location='/search_person/';
+}
+</script>
+
+<table border="1">
+  <tr>
+    <th width="30px">id</th>
+    <th width="130px">name</th>
+	<th width="30px">age</th>
+  </tr>
+{% if not lst_person_all_html  %}
+    <span onload="message()"></span>
+{% else %}
+        {% for value in lst_person_all_html %}
+    <tr align="center">
+        <td>{{ value.id }}</td>
+        <td>{{ value.name }}</td>
+        <td>{{ value.age }}</td>
+    </tr>
+        {% endfor %}
+{% endif %}
+</table>
+
+{% endblock %}

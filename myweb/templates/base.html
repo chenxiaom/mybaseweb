@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block title  %}base页面的默认标题{% endblock %}</title>
+	<meta content="DNT" name="keywords"/>
+	<meta content="主机组" name="description"/>
+	<link href="/static/upfile/files/favicon.html" type="/static/image/x-icon" rel="icon">
+	<link href="/static/upfile/files/favicon.html" type="/static/image/x-icon" rel="shortcut icon">
+	<link type="text/css" rel="stylesheet" href="/static/template/css/style.css" />
+	<link type="text/css" rel="stylesheet" href="/static/manager/css/upDateStyle.css" />
+	<link rel="stylesheet" type="text/css" href="/static/js/jquery-ui.css" />
+	<script type="text/javascript">
+		window.top["BNPage"]=0;
+	</script>
+	<script type="text/javascript" src="/static/manager/js/myjs.js"></script>
+	<script type="text/javascript" src="/static/manager/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="/static/inc/widget/ckplayer6.2/js/offlights.js"></script>
+	<script type="text/javascript" src="/static/inc/widget/ckplayer6.2/ckplayer/ckplayer.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/static/manager/js/md5.js"></script>
+	<script type="text/javascript" src="/static/manager/js/style.js"></script>
+	<script type="text/javascript" src="/static/manager/js/updateStyle.js"></script>
+	<script type="text/javascript" src="/static/manager/js/map.js"></script>
+
+	<script type="text/javascript" src="/static/js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.ui.datepicker-zh-CN.js"></script>
+	<script type="text/javascript" src="/static/js/jquery-ui-timepicker-addon.js"></script>
+	<script type="text/javascript" src="/static/js/jquery-ui-timepicker-zh-CN.js"></script>
+
+	<script type="text/javascript" src="/static/js/laydate.js"></script>
+
+	<script type="text/javascript">
+jQuery(document).ready(function(){
+	var qcloud={};
+	$('[_t_nav]').hover(function(){
+		var _nav = $(this).attr('_t_nav');
+		clearTimeout( qcloud[ _nav + '_timer' ] );
+		qcloud[ _nav + '_timer' ] = setTimeout(function(){
+		$('[_t_nav]').each(function(){
+		$(this)[ _nav == $(this).attr('_t_nav') ? 'addClass':'removeClass' ]('nav-up-selected');
+		});
+		$('#'+_nav).stop(true,true).slideDown(200);
+		}, 150);
+	},function(){
+		var _nav = $(this).attr('_t_nav');
+		clearTimeout( qcloud[ _nav + '_timer' ] );
+		qcloud[ _nav + '_timer' ] = setTimeout(function(){
+		$('[_t_nav]').removeClass('nav-up-selected');
+		$('#'+_nav).stop(true,true).slideUp(200);
+		}, 150);
+	});
+});
+</script>
+
+	<style type="text/css">
+		body{background-color:#ffffff;background-repeat:repeat;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="inc/tools/QQkefu/style/green.css"/>
+</head>
+<body style="text-align:center">
+{% include 'nav.html' %}
+{% block content %}
+    <div>这里是默认内容，所有继承自这个模板的，如果不覆盖就显示这里的默认内容</div>
+{% endblock %}
+
+{% include 'bottom.html' %}
+{% include 'tongji.html' %}
+
+</body>
+</html>

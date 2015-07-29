@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}删除指定数据页面12{% endblock %}
+{% block content %}
+     <br><br><br><br>
+    <form action="/inst_pers_tb_sql/" method="get">
+        <table >
+            <tr height="40px">
+                <td>name: </td>
+                <td><input type="text"  class="rep_ipt" name="name" autofocus='autofocus' autocomplete="off"></td>
+            </tr>
+            <tr height="40px">
+                <td>age: </td>
+                <td><input type="text"  class="rep_ipt" name="age"  autocomplete="off"></td>
+            </tr>
+            <tr height="40px" align="center">
+                <td colspan="2"><input class='add_but' type="submit" value="提交"></td>
+            </tr>
+        </table>
+    </form>
+     <br><br><br><br>
+{% endblock %}

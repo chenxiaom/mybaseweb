@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}欢迎光临首页1{% endblock %}
+{% block content %}
+    <br><br><br><br>
+
+<script type="text/javascript">
+function message()
+{
+alert("no record in database"); window.location='/search_person/';
+}
+</script>
+
+<table border="1">
+  <tr>
+    <th height="40px" width="50px">id</th>
+    <th  width="80px">name</th>
+	<th  width="60px">age</th>
+  </tr>
+{% if not now  %}
+    <span onload="message()"></span>
+{% else %}
+        {% for value in now %}
+    <tr>
+        <td>{{ value.id }}</td>
+        <td>{{ value.name }}</td>
+        <td>{{ value.age }}</td>
+    </tr>
+        {% endfor %}
+{% endif %}
+</table>
+    <br><br><br><br>
+{% endblock %}

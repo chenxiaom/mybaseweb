@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}加法运算页面1{% endblock %}
+{% block content %}
+        <br><br><br><br>
+
+<style type="text/css">
+input{width: 60px;text-align:center; vertical-align:middle}
+</style>
+    <p>请输入两个数字:(跳转到另一个页面输出结果)</p><br>
+<form action="/add/" method="get">
+    <input type="text" name="a" class='rep_ipt' autofocus='autofocus' autocomplete="off"> + <input type="text" class='rep_ipt' name="b" autocomplete="off"> <br>
+    <br><input type="submit"  class='add_but' value="提交">
+</form>
+    <br><br><br><br>
+<p>请输入两个数字:(弹出对话框输出结果)</p><br>
+<form action="/add3/" method="get">
+    <input type="text" class='rep_ipt' name="c" autocomplete="off"> + <input type="text" class='rep_ipt' name="d" autocomplete="off"> <br>
+    <br><input type="submit" class='add_but' value="提交">
+</form>
+
+        <br><br><br><br>
+{% endblock %}
